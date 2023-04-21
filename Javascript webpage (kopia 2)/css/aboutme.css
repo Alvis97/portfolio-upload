@@ -1,0 +1,428 @@
+body{
+  margin: 0;
+  width: 100vw;
+  text-align: center;
+  padding-bottom: 5vh;
+}
+
+/*Menu*/
+.desctop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.desctop a{
+  margin: auto 15px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bolder;
+}
+
+.desctop a:hover{
+background-color: #fac43e;
+color: black;
+}
+
+.desctop a:nth-child(2){
+  background-color: #fac43e;
+}
+
+.links button{
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bolder;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  width: fit-content;
+  height: 3vh;
+}  
+
+.links button:hover{
+  background-color: #fac43e;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+}  
+
+
+
+
+/* Hidden bubbles*/
+.hidden {
+  position: absolute;
+  z-index: 1003;
+  top: 13vh;
+  right: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 20vh;
+  width: 10vw;
+  font-family: 'Montserrat', sans-serif;
+  animation: bubbles 1s;
+  display: none; /* hide the element by default */
+  opacity: 0; /* set opacity to 0 to hide the element */
+  transition: opacity 0.5s ease; /* add transition property to the element */
+}
+
+.show {
+  display: flex; /* set display to flex to show the element */
+  opacity: 1; /* set opacity to 1 to show the element */
+}
+
+#displayArtCode{
+  display: none;
+}
+
+@keyframes bubbles {
+  0%   { opacity:0; top:55px;}
+  100% { opacity:30px; bottom:0px;}
+}
+
+.cirkel a{
+  background-color: #fac43e;
+  color: black;
+  padding: 50px 50px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cirkel a:hover{
+  background-color: #fcb604;
+  text-decoration: none;
+  border: 7px solid #fbcf60;
+}
+
+.cirkel1 a:hover{
+  background-color: #fcb604;
+  text-decoration: none;
+  border: 7px solid #fbcf60;
+}
+
+.cirkel1 a{
+  background-color: #fac43e;
+  color: black;
+  padding: 50px 44px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* HAMBURGER MENU STARTS*/
+.mobile{
+display: none;
+}
+
+@media screen and (max-width:983px) {
+
+.desctop{
+  display: none;
+}
+
+/*HAMBURDGER MENU SMALL DEVICES*/
+.mobile{
+  padding: 5px;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: black;
+}
+
+.mobile button{
+  padding: 5px 8px;
+  text-align: center;
+  background-color: rgb(255, 198, 75);
+  border: none;
+}
+
+#myLinks {
+  position: absolute;
+  z-index: 900;
+  background-color: rgba(255, 255, 255, 0.962);
+  height: 100vh;
+  width: 100vw;
+  top: 60px;
+  left: 0;
+  animation: mobilelinks 1s;
+  display: none; 
+}
+
+#myLinks.show {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes mobilelinks {
+  0%   { opacity:0; top:55px;}
+  100% { opacity:1; bottom:0px;}
+}
+
+/* button */
+#viewArtCode{
+  margin: 7px auto;
+  font-size: 48px;
+  color: black;
+  animation: links 1s;;
+  animation-fill-mode: forwards;
+  text-decoration: underline;
+  background-color:#ffffff00;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bolder;
+}
+
+#myLinks a{
+  margin: 7px auto;
+  font-size: 48px;
+  color: black;
+  animation: links 1s;;
+  animation-fill-mode: forwards;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bolder;
+}
+
+@keyframes links {
+  0%   { margin:0px;}
+  100% { margin:30px;}
+}
+
+#myLinks a:hover {
+  margin: 20px auto;
+  font-size: 50px;
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+button i{
+  font-size: 42px;
+  color: white;
+  margin: 0;
+}
+
+#displayArtCode {
+  display: none;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+#displayArtCode a {
+  font-size: 38px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+  color: #fcb604;
+}
+
+#displayArtCode a:hover {
+  font-size: 38px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:600;
+  text-decoration: underline;
+}
+
+}
+
+
+/* About me */
+.aboutme{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  margin-top: 5vh;
+}
+
+#text-box{
+  width: 30vw;
+  height: fit-content;
+  text-align: left;
+}
+
+#text-box h1{
+  font-family: 'Bebas Neue';
+  font-size: 80px;
+  width: fit-content;
+  word-spacing: 15px;
+  margin: 0;
+  
+    padding:0.5vh 1vw 0vh 0.2vw ; 
+}
+
+#text-box p{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+}
+
+#image-box{
+  height: 600px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+#image-box img{
+  height: 550px;
+  width: 410px;
+  border: 5px solid black;
+}
+
+#Alinks{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: auto 5%;
+  color: black;
+  text-decoration: none;
+}
+
+#Alinks a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin-top: 5vh;
+}
+
+#Alinks a:hover{
+  background-color: #fac43e;
+}
+
+hr{
+  width: 30vw;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+
+#logo-last{
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+}
+
+@media screen and (max-width:1238px) {
+  
+  #image-box img{
+    height: 450px;
+    width: 330px;
+  }
+
+
+#text-box h1{
+  font-size: 60px; 
+}
+
+#text-box p{
+  font-size: 14px;
+}
+
+#image-box{
+  height: 500px;
+  width: 40vw;
+}
+
+hr{
+  width: 30vw;
+  margin-top: 3vh;
+}
+
+}
+
+@media screen and (max-width:983px) {
+
+  .aboutme{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top: 15vh;
+  }
+
+}
+
+@media screen and (max-width:943px) {
+
+  .aboutme{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top: 22vh;
+  }
+
+  #text-box{
+    width: 90vw;
+    height: fit-content;
+    text-align: left;
+  }
+
+  #image-box{
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #e6e6e6;
+    padding: 20px 50px;
+  }
+
+  #image-box img{
+    height: 350px;
+    width: 270px;
+    border: 5px solid black;
+  }
+
+  #Alinks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 30vh;
+    width: 20vw;
+    margin: auto 5%;
+    color: black;
+    text-decoration: none;
+  }
+
+  #Alinks a{
+    background-color: #fac43e;
+  }
+
+  #Alinks a:hover{
+    background-color: #fac43e;
+    text-decoration: underline;
+  }
+
+}
+
+@media screen and (max-width:725px) {
+
+  #Alinks{
+    width: 30vw;
+  }
+
+}

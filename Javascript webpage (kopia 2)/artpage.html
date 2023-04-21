@@ -1,0 +1,343 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/artpage.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">    
+  <!-- font awsome -->
+  <script src="https://kit.fontawesome.com/0852dc3358.js" crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="jquery-3.6.4.js"></script>
+  <title>Artpage</title>
+</head>
+<body>
+
+<!-- Menu -->
+<header class="desctop">
+    <img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px">
+        <div class="links">
+          <a href="index.html">HOMEPAGE</a>
+          <a href="aboutme.html">ABOUT ME</a>
+          <button type="submit" id="portfolio">PORTFOLIO</button>
+          <a href="contact.html">CONTACT</a>
+        </div>
+</header> 
+<!-- Hidden portfolio dropdown -->
+<div class="hidden">
+  <div class="cirkel">
+    <a href="artpage.html">Art</a>
+  </div>
+  <div class="cirkel1">
+    <a href="webpage.html">Web</a>
+  </div>
+</div>
+  
+
+<!-- Mobile navigationbar -->
+<header class="mobile">
+  <button id="hambugerLinks"><i class="fa-solid fa-bars"></i></button>
+  <div id="myLinks">
+    <a href="index.html">HOMEPAGE</a>
+    <a href="aboutme.html">ABOUTME</a>
+    <button id="viewArtCode" class="mylinksbut" >PORTFOLIO</button> 
+    
+    <div id="displayArtCode">
+      <a href="artpage.html">Art</a>
+      <a href="webpage.html">Web</a>
+    </div>
+  
+    <a href="contact.html" class="mylinksbut">CONTACT</a>
+  </div>
+  <div class="topnav">
+    <a href=""><img src="" alt=""></a>
+  </div>
+</header>
+          
+
+
+<!-- portfolio links -->
+<section id="portfolio-links1">
+  <a href="artpage.html">ART</a>
+  <p>/</p>
+  <a href="webpage.html">WEB</a>
+</section>
+
+<!-- content images -->
+<section id="content-box">
+
+  <div class="galleri">
+      <div class="pictures">
+          <img class="pic pic1" src="images/woman-face.jpeg"  onclick="currentSlide(1)">
+      </div>
+      <div class="pictures">
+          <img class="pic pic2" src="images/bodys.jpg" onclick="currentSlide(2)">
+      </div>
+      <div class="pictures">
+          <img class="pic pic3" src="images/elephants.jpg" onclick="currentSlide(3)"> 
+      </div>
+      </div>
+      <div class="galleri">
+          <div class="pictures">
+              <img class="pic pic4" src="images/jeans-backside.jpg"  onclick="currentSlide(4)"> 
+          </div>
+          <div class="pictures">
+              <img class="pic pic5" src="images/kroki.jpg"  onclick="currentSlide(5)"> 
+          </div>    
+          <div class="pictures">
+              <img class="pic pic6" src="images/man.jpg" onclick="currentSlide(6)">
+          </div>
+      </div>
+  </div>
+
+</section>
+
+
+<section id="hidden-carusel">
+  <div class="container">
+      <div class="mySlides">
+          <div class="numbertext">
+            1/ 6
+          </div>
+          <div class="slide-structure">
+                <img src="images/woman-face.jpeg"  >
+                <div class="textcontent">
+                    <h1>Face</h1>
+                    <hr>
+                    <p>this is a face</p>
+                    <hr>
+                    <p id="InfoPopup">  Material: Paper A5 and pencil</p>
+                </div>
+          </div>
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">
+        2 / 6
+        </div>
+        <div class="slide-structure">
+            <img src="images/bodys.jpg" >
+            <div class="textcontent">
+                <h1>Bodys</h1>
+                <hr>
+                <p>Sketches of V. </p>
+                <hr>
+                <p id="InfoPopup">  Material: Paper A4 and pencil</p>
+            </div>
+        </div>
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">
+        3 / 6
+        </div>
+        <div class="slide-structure">
+            <img src="images/elephants.jpg" >
+            <div class="textcontent">
+                <h1>Elephants</h1>
+                <hr>
+                <p>Elephants made of wood</p>
+                <hr>
+                <p id="InfoPopup">  Material: Playwood 100x120cm</p>
+            </div>
+        </div>
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">
+        4/ 6
+        </div>
+        <div class="slide-structure">
+            <img src="images/jeans-backside.jpg" >
+            <div class="textcontent">
+                <h1>70-80 Jeans</h1>
+                <hr>
+                <p>Handpainted Jeans, portraiting different artist and logos from that time.</p>
+                <hr>
+                <p id="InfoPopup">  Material: Jeans and pencil for textile <br> size: 34</p>
+            </div>
+        </div>
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">
+        5 / 6
+        </div>
+        <div class="slide-structure">
+            <img src="images/kroki.jpg" >
+            <div class="textcontent">
+                <h1>Shadow kroki</h1>
+                <hr>
+                <p>Kroki lesson focusing on shadows</p>
+                <hr>
+                <p id="InfoPopup">  Material: Paper A5 and black inc</p>
+            </div>
+        </div>
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">
+        6 / 6
+        </div>
+        <div class="slide-structure">
+            <img src="images/man.jpg" >
+            <div class="textcontent">
+                <h1>Man</h1>
+                <hr>
+                <p>Portrait of .....</p>
+                <hr>
+                <p id="InfoPopup">  Material: Paper A5 and pencil</p>
+            </div>
+        </div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/woman-face.jpeg" style="width:100%" onclick="currentSlide(1)">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="images/bodys.jpg" style="width:100%" onclick="currentSlide(2)">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="images/elephants.jpg" style="width:100%" onclick="currentSlide(3)"> 
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="images/jeans-backside.jpg"  style="width:100%" onclick="currentSlide(4)"> 
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="images/kroki.jpg" style="width:100%" onclick="currentSlide(5)"> 
+        </div>    
+        <div class="column">
+          <img class="demo cursor" src="images/man.jpg" style="width:100%" onclick="currentSlide(6)">
+        </div>
+      </div>
+    </div>
+
+
+    <button id="exit" name="exit"><i class="fa-solid fa-circle-xmark fa-spin" style="color: #ffc524;"></i></button>
+
+</section>
+
+
+<footer>
+  <img src="images/Alva-LOGO.png" alt="alva logga" height="22px" width="90px">
+</footer>
+
+
+
+
+
+<script>
+
+//SLide Show
+let slideIndex = 1;
+showSlides(slideIndex);
+        
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+        
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+        
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}  
+
+
+
+// EXIT CARUSEL
+var exitbtn = document.getElementById("exit");
+
+exitbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  var slidegalery = document.getElementById("hidden-carusel");
+  slidegalery.style.display = "none"; 
+});
+
+
+
+
+
+
+// JQUWRY; DISPLAY THE RIGHT PAGE
+  
+$(document).ready(function() {
+
+  //CLICK ON AN IMAGE FROM THE GALERI AND IT WILL DISPLAY IN THE SLIDESHOW
+  // define click event handlers for all image buttons
+  $(".pic1, .pic2, .pic3, .pic4, .pic5, .pic6").click(function(e) {
+    e.preventDefault();
+    
+    // get the ID of the slide gallery and desktop body elements
+    var slidegallery = $("#hidden-carusel");
+    var body = $(".desctop");
+    
+    // display the slide gallery and set background color to black
+    slidegallery.show();
+    //body.css("background-color", "black");
+    
+    // switch to slide 2 after gallery is displayed
+    var currentSlide = 1; // assuming the first slide is displayed initially
+    var slide2 = slidegallery.find(".slide:nth-child(2)");
+    slide2.show();
+  });
+
+
+  //MOBILE MENU DROPDOWN FORART AND WEB
+  $('#viewArtCode').click(function() {
+  $('#displayArtCode').slideDown(); /* Show the element using slideDown() method */
+  });
+
+  $(document).click(function(event) {
+    if (!$(event.target).closest('#viewArtCode, #displayArtCode').length) {
+    if ($('#displayArtCode').is(':visible')) {
+      $('#displayArtCode').slideUp();
+    }
+    }
+  });
+  
+
+  
+  
+    // PORTFOLIO CIRCLE DROPDOWN
+    $('#portfolio').click(function() {
+    $('.hidden').toggleClass('show'); /* toggle the show class */
+    }); 
+
+  //HAMBURGER MENU DROPDOWN
+  $('#hambugerLinks').click(function() {
+  $('#myLinks').toggleClass('show'); /* Add or remove the .show class */
+  });
+   
+});
+</script>    
+</body>    
+</html>
+
+    

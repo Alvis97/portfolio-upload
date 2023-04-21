@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/0852dc3358.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="jquery-3.6.4.js"></script>
+    <title>Homepage</title>
+</head>
+<body> 
+  
+
+<!-- Menu -->
+<header class="desctop">
+  <img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px">
+      <div class="links">
+        <a href="index.html">HOMEPAGE</a>
+        <a href="aboutme.html">ABOUT ME</a>
+        <button type="submit" id="portfolio">PORTFOLIO</button>
+        <a href="contact.html">CONTACT</a>
+      </div>
+</header> 
+<!-- Hidden portfolio dropdown -->
+<div class="hidden">
+<div class="cirkel">
+  <a href="artpage.html">Art</a>
+</div>
+<div class="cirkel1">
+  <a href="webpage.html">Web</a>
+</div>
+</div>
+
+
+<!-- Mobile navigationbar -->
+<header class="mobile">
+<button id="hambugerLinks"><i class="fa-solid fa-bars"></i></button>
+<div id="myLinks">
+  <a href="index.html">HOMEPAGE</a>
+  <a href="aboutme.html">ABOUTME</a>
+  <button id="viewArtCode" class="mylinksbut" >PORTFOLIO</button> 
+  
+  <div id="displayArtCode">
+    <a href="artpage.html">Art</a>
+    <a href="webpage.html">Web</a>
+  </div>
+
+  <a href="contact.html" class="mylinksbut">CONTACT</a>
+</div>
+<div class="topnav">
+  <a href=""><img src="" alt=""></a>
+</div>
+</header>
+        
+
+ 
+
+
+ 
+
+  <!-- Text presentation -->
+  <div class="text">
+      <h1>Alva Jonsson</h1>
+      <h3>Webdesign/ART</h3>
+  </div>  
+    
+    <img id="logo-last" src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px" >
+    
+    <!-- auto playing slideshow -->
+    <section class="intro">
+        <img src="Images/woman-face.jpeg" alt="slideshow-img" class="slideshow-images">
+        <img src="Images/painting.jpg" alt="slideshow-img" class="slideshow-images">
+        <img src="Images/bodys.jpg" alt="slideshow-img" class="slideshow-images">
+      </section>
+    
+    <!-- auto playing small slideshow -->  
+      <section class="intro2">
+        <img src="Images/woman-face.jpeg" alt="slideshow2-img2" class="slideshow2-images2">
+        <img src="Images/painting.jpg" alt="slideshow2-img2" class="slideshow2-images2">
+        <img src="Images/bodys.jpg" alt="slideshow2-img2" class="slideshow2-images2">
+      </section>
+    
+    <!-- Squares big devices -->  
+      <div class="square">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+      </div>
+
+      
+    
+  <script>
+
+    // slideshows
+    const slideshow1Images = document.querySelectorAll(".intro .slideshow-images");
+    const slideshow2Images = document.querySelectorAll(".intro2 .slideshow2-images2");
+
+    const nextImageDelay = 3000;
+    let currentImageCounter = 0;
+
+    slideshow1Images[currentImageCounter].style.display = "block";
+    slideshow2Images[currentImageCounter].style.display = "block";
+
+    setInterval(nextImage, nextImageDelay);
+
+    function nextImage() {
+    slideshow1Images[currentImageCounter].style.display = "none";
+    slideshow2Images[currentImageCounter].style.display = "none";
+
+    currentImageCounter = (currentImageCounter + 1) % slideshow2Images.length;
+  
+    slideshow1Images[currentImageCounter].style.display = "block";
+    slideshow2Images[currentImageCounter].style.display = "block";
+    }
+
+
+  //JQUERY
+  //Display the art part in mobile menu
+  $(document).ready(function(){
+
+    //MOBILE MENU DROPDOWN FORART AND WEB
+    $('#viewArtCode').click(function() {
+    $('#displayArtCode').slideDown(); /* Show the element using slideDown() method */
+    });
+
+    $(document).click(function(event) {
+    if (!$(event.target).closest('#viewArtCode, #displayArtCode').length) {
+    if ($('#displayArtCode').is(':visible')) {
+      $('#displayArtCode').slideUp();
+    }
+    }
+    }); 
+    
+   
+  
+    // PORTFOLIO CIRCLE DROPDOWN
+    $('#portfolio').click(function() {
+    $('.hidden').toggleClass('show'); /* toggle the show class */
+    }); 
+
+    //HAMBURGER MENU DROPDOWN
+    $('#hambugerLinks').click(function() {
+    $('#myLinks').toggleClass('show'); /* Add or remove the .show class */
+    });
+
+     
+
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+body{
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+    padding-bottom: 5vh;
+}
+
+/*Menu*/
+.desctop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.desctop a{
+    margin: auto 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+}
+
+.desctop a:hover{
+  background-color: #fac43e;
+  color: black;
+}
+
+.links button{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    background-color: #fac43e;
+    width: fit-content;
+    height: 3vh;
+  }  
+  
+  .links button:hover{
+    background-color: #fac43e;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+  }  
+
+
+
+
+/* Hidden bubbles*/
+.hidden{
+    position: absolute;
+    z-index: 1003;
+    top: 13vh;
+    right: 8rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 20vh;
+    width: 10vw;
+    font-family: 'Montserrat', sans-serif;
+    animation: bubbles 1s;
+  }
+
+  #displayArtCode{
+    display: none;
+  }
+  
+  @keyframes bubbles {
+    0%   { opacity:0; top:55px;}
+    100% { opacity:30px; bottom:0px;}
+  }
+  
+  .cirkel a{
+    background-color: #fac43e;
+    color: black;
+    padding: 50px 50px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .cirkel a:hover{
+    background-color: #fcb604;
+    text-decoration: none;
+    border: 7px solid #fbcf60;
+  }
+  
+  .cirkel1 a:hover{
+    background-color: #fcb604;
+    text-decoration: none;
+    border: 7px solid #fbcf60;
+  }
+  
+  .cirkel1 a{
+    background-color: #fac43e;
+    color: black;
+    padding: 50px 44px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+
+
+/* HAMBURGER MENU STARTS*/
+.mobile{
+  display: none;
+}
+
+@media screen and (max-width:983px) {
+
+  .desctop{
+    display: none;
+  }
+
+  /*HAMBURDGER MENU SMALL DEVICES*/
+  .mobile{
+    padding: 5px;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: black;
+  }
+
+  .mobile button{
+    padding: 5px 8px;
+    text-align: center;
+    background-color: rgb(255, 198, 75);
+    border: none;
+  }
+
+  #myLinks {
+    position: absolute;
+    z-index: 900;
+    background-color: rgba(255, 255, 255, 0.962);
+    height: 100vh;
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    animation: mobilelinks 1s;
+    display: none; 
+  }
+  
+  #myLinks.show {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @keyframes mobilelinks {
+    0%   { opacity:0; top:55px;}
+    100% { opacity:1; bottom:0px;}
+  }
+
+  /* button */
+  #viewArtCode{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: underline;
+    background-color:#ffffff00;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+  }
+
+  #myLinks a{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+  }
+
+  @keyframes links {
+    0%   { margin:0px;}
+    100% { margin:30px;}
+  }
+
+  #myLinks a:hover {
+    margin: 20px auto;
+    font-size: 50px;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  button i{
+    font-size: 42px;
+    color: white;
+    margin: 0;
+  }
+
+  #displayArtCode {
+    display: none;
+    flex-direction: column;
+    font-size: 20px;
+  }
+  
+  #displayArtCode a {
+    font-size: 38px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    color: #fcb604;
+  }
+  
+  #displayArtCode a:hover {
+    font-size: 38px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    text-decoration: underline;
+  }
+
+}
+
+    /* Style hamburger menu*/
+.mobile{
+  display: none;
+}
+
+@media screen and (max-width:983px) {
+
+  .desctop{
+    display: none;
+  }
+
+  /*Hamburgar menu displays*/
+  .mobile{
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: black;
+  }
+
+  .mobile button{
+    padding: 5px 8px;
+    text-align: center;
+    background-color: rgb(255, 198, 75);
+    border: none;
+  }
+
+  #myLinks{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 900;
+    background-color: rgba(255, 255, 255, 0.962);
+    height: 100vh;
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    animation: mobilelinks 1s;
+  }
+
+  @keyframes mobilelinks {
+    0%   { opacity:0; top:55px;}
+    100% { opacity:1; bottom:0px;}
+  }
+
+  /* button */
+  #viewArtCode{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: underline;
+    background-color:#ffffff00;
+    border: none;
+  }
+
+  #myLinks a{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: none;
+  }
+
+  @keyframes links {
+    0%   { margin:0px;}
+    100% { margin:30px;}
+  }
+
+  #myLinks a:hover {
+    margin: 20px auto;
+    font-size: 52px;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
+    animation: A-links 1s forwards;
+  }
+
+  @keyframes A-links {
+    0%   { margin:20px auto; font-size:52px;}
+    100% { margin:24px auto; font-size:54px;}
+  }
+
+  button i{
+    font-size: 42px;
+    color: white;
+    margin: 0;
+  }
+
+  #displayArtCode{
+    display: none;
+  }
+
+  #displayArtCode{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  #displayArtCode a{
+    font-size: 32px;
+    margin: 0;
+  }
+
+}
+ 

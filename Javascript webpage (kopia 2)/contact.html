@@ -1,0 +1,282 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/contact.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">    
+  <!-- font awsome -->
+  <script src="https://kit.fontawesome.com/0852dc3358.js" crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="jquery-3.6.4.js"></script>
+  <title>Contact</title>
+  <script src="script.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("_ce8GMzCfkFB8Q5xW");
+   })();
+</script>
+</head>
+<body>
+
+<!-- Menu -->
+<header class="desctop">
+  <img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px">
+      <div class="links">
+        <a href="index.html">HOMEPAGE</a>
+        <a href="aboutme.html">ABOUT ME</a>
+        <button type="submit" id="portfolio">PORTFOLIO</button>
+        <a href="contact.html">CONTACT</a>
+      </div>
+</header> 
+<!-- Hidden portfolio dropdown -->
+<div class="hidden">
+<div class="cirkel">
+  <a href="artpage.html">Art</a>
+</div>
+<div class="cirkel1">
+  <a href="webpage.html">Web</a>
+</div>
+</div>
+
+
+<!-- Mobile navigationbar -->
+<header class="mobile">
+<button id="hambugerLinks"><i class="fa-solid fa-bars"></i></button>
+<div id="myLinks">
+  <a href="index.html">HOMEPAGE</a>
+  <a href="aboutme.html">ABOUTME</a>
+  <button id="viewArtCode" class="mylinksbut" >PORTFOLIO</button> 
+  
+  <div id="displayArtCode">
+    <a href="artpage.html">Art</a>
+    <a href="webpage.html">Web</a>
+  </div>
+
+  <a href="contact.html" class="mylinksbut">CONTACT</a>
+</div>
+<div class="topnav">
+  <a href=""><img src="" alt=""></a>
+</div>
+</header>
+
+<!-- Contact Me Content -->
+<section id="section">
+  <div class="left">
+    <h1>Contact Me</h1>
+    <h3>Write the Email :)</h3>
+    <form action="" method="post" id="form"> 
+        <div class="dropdown">
+          <input class="text-box" type="text" placeholder="Select subject" readonly>
+            <div class="options">
+              <div onclick="show('ART')" value="art">ART</div>
+              <div onclick="show('WEB')" value="web">WEB</div>
+              <div onclick="show('OTHER')" value="other">OTHER</div>
+            </div>
+        </div>
+        <span id="warning5"></span>
+        <br>
+        
+        <label for="fname">First Name</label><br>
+        <input type="text" id="fname"><br>
+        <span id="warning1"></span><br>
+
+        <label for="mail">Email</label><br>
+        <input type="text" id="mail">
+        <br><span id="warnings"></span>
+        <span id="warnings2"></span><br>
+
+        <label for="message">Message</label><br>
+        <textarea name="message" id="message" cols="30" rows="30" maxlength="500"></textarea><br>
+        
+        <div id="charcount"></div>
+        <span id="warning3"></span>
+        <button class="button" role="button" onclick="sendMail()" id="btn">Send form</button>
+    </form>    
+  </div>
+            
+  <div class="right">
+    <img src="Images/me-ego.jpg" alt="selfie">
+      <p>Alva Jonsson</p>
+      <p>SWE Örebro/ UK London</p>
+      <p><i class="fa-regular fa-envelope"> </i>alva-jonsson@live.se</p>
+      <div class="rlinks">
+        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+  </div>
+</section>
+
+
+<!-- Popup when form is submitted--> 
+<div class="suprise-hidden">
+        
+  <div id="text-box">
+    <h2>Thanks for your email!</h2>
+    <h4>I will reach back to you as soon as I can, keep an eye in your inbox and junk-mail.</h4>
+  </div>
+        
+  <div class="exit">
+    <input type="submit" value="X" id="exit">
+  </div>
+</div> 
+
+
+<!-- Footer image -->
+<img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px" id="logo-last">
+
+
+
+
+
+
+
+
+
+
+<!-- JS -->
+<script>
+    
+//Function dropdown
+function show(value) {
+  document.querySelector(".text-box").value = value;
+}
+  
+let dropdown = document.querySelector(".dropdown")
+  dropdown.onclick = function() {
+    dropdown.classList.toggle("active")
+  }    
+            
+
+//Message counter
+var messbox=document.querySelector("#message");
+messbox.addEventListener("input", (e)=>{
+  e.preventDefault();
+  var textmess = document.querySelector("#message").value;
+  var textmessLength = textmess.length;
+
+  document.querySelector("#charcount").innerHTML = "You have written " + textmessLength +
+  " characters and have " + (500-textmessLength) + " left.";
+});
+
+
+
+
+
+let exit=document.querySelector("#exit");
+
+exit.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    window.location.href="index.html"
+});
+
+
+
+
+
+ //Validation form
+ let btn=document.querySelector("#btn");
+
+btn.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    var name=document.querySelector("#fname").value;
+    var mail=document.querySelector("#mail").value;
+    const subjectSelect = document.querySelector('.text-box');
+    var messbox = document.querySelector("#message").value;
+    const supriseElement = document.querySelector('.suprise-hidden');
+
+    let isValidForm = true; // move the variable initialization here
+
+    if (!name || !mail){
+        // validation checks for name and mail
+        isValidForm = false;
+        document.querySelector("#warnings").innerHTML = "//Fields are empty";
+        document.querySelector("#fname").style.border = "2px solid red";
+        document.querySelector("#mail").style.border = "2px solid red";
+        return;
+    } 
+    else if (!messbox){
+        // validation check for message box
+        isValidForm = false;
+        document.querySelector("#warning3").innerHTML= "//You need to enter a message <br>";
+        document.querySelector("#message").style.border= "2px solid red";
+        return;
+    }
+    // validation checks for name and mail format
+    var regName=/^([a-zA-Z\-äöåÄÖÅ]{2,20})$/gm
+    if(!regName.test(name))
+    {
+        isValidForm = false;
+        document.querySelector("#warning1").innerHTML = "//not a valid name";
+        return;
+    }
+
+    var regMail=/^([\w\-.]{3,50})@([\w][^-_?!.="]{3,30}).([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/gm
+     if (!regMail.test(mail))
+    {
+        isValidForm = false;
+        document.querySelector("#warnings2").innerHTML = "//not a valid email";
+        return;
+    }
+
+    else if (subjectSelect.value === '') {
+       // validation check for subject selection
+       isValidForm = false;
+       document.querySelector("#warning5").innerHTML = "//You need to select a subject";
+       return;    
+    }
+
+    if (isValidForm) {
+         supriseElement.style.display = 'block';
+    }
+});  
+
+
+
+
+
+//JQUERY
+//Display the art part in mobile menu
+$(document).ready(function(){
+
+//MOBILE MENU DROPDOWN FORART AND WEB
+$('#viewArtCode').click(function() {
+$('#displayArtCode').slideDown(); /* Show the element using slideDown() method */
+});
+
+$(document).click(function(event) {
+if (!$(event.target).closest('#viewArtCode, #displayArtCode').length) {
+if ($('#displayArtCode').is(':visible')) {
+  $('#displayArtCode').slideUp();
+}
+}
+});  
+
+// PORTFOLIO CIRCLE DROPDOWN
+$('#portfolio').click(function() {
+    $('.hidden').toggleClass('show'); /* toggle the show class */
+}); 
+
+//HAMBURGER MENU DROPDOWN
+$('#hambugerLinks').click(function() {
+$('#myLinks').toggleClass('show'); /* Add or remove the .show class */
+});
+
+ 
+
+});
+        
+
+</script>
+    
+</body>
+</html>

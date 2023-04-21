@@ -1,0 +1,873 @@
+body{
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+    padding-bottom: 5vh;
+}
+
+/*Menu*/
+.desctop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.desctop a{
+    margin: auto 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+}
+
+.desctop a:hover{
+  background-color: #fac43e;
+  color: black;
+}
+
+.links button{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    background-color: #fac43e;
+    width: fit-content;
+    height: 3vh;
+  }  
+  
+  .links button:hover{
+    background-color: #fac43e;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+  }  
+
+
+
+
+/* HIDDEN BUBBLES IN DESCTOP MENU*/
+.hidden {
+  display: none; /* hide the element by default */
+}
+
+.show {
+  display: flex; /* set display to flex to show the elemeopacitynt */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1003;
+  top: 13vh;
+  right: 8rem;
+  height: 20vh;
+  width: 10vw;
+  font-family: 'Montserrat', sans-serif;
+  animation: bubbles 1s;
+}
+
+#displayArtCode{
+  display: none;
+}
+
+@keyframes bubbles {
+  0%   { opacity:0; top:55px;}
+  100% { opacity:30px; bottom:0px;}
+}
+
+.cirkel a{
+  background-color: #fac43e;
+  color: black;
+  padding: 50px 50px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cirkel a:hover{
+  background-color: #fcb604;
+  text-decoration: none;
+  border: 7px solid #fbcf60;
+}
+
+.cirkel1 a:hover{
+  background-color: #fcb604;
+  text-decoration: none;
+  border: 7px solid #fbcf60;
+}
+
+.cirkel1 a{
+  background-color: #fac43e;
+  color: black;
+  padding: 50px 44px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+  
+
+
+/* HAMBURGER MENU STARTS*/
+.mobile{
+  display: none;
+}
+
+@media screen and (max-width:983px) {
+
+  .desctop{
+    display: none;
+  }
+
+  /*HAMBURDGER MENU SMALL DEVICES*/
+  .mobile{
+    padding: 5px;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: black;
+  }
+
+  .mobile button{
+    padding: 5px 8px;
+    text-align: center;
+    background-color: rgb(255, 198, 75);
+    border: none;
+  }
+
+  #myLinks {
+    position: absolute;
+    z-index: 900;
+    background-color: rgba(255, 255, 255, 0.962);
+    height: 100vh;
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    animation: mobilelinks 1s;
+    display: none; 
+  }
+  
+  #myLinks.show {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @keyframes mobilelinks {
+    0%   { opacity:0; top:55px;}
+    100% { opacity:1; bottom:0px;}
+  }
+
+  /* button */
+  #viewArtCode{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: underline;
+    background-color:#ffffff00;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+  }
+
+  #myLinks a{
+    margin: 7px auto;
+    font-size: 48px;
+    color: black;
+    animation: links 1s;;
+    animation-fill-mode: forwards;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+  }
+
+  @keyframes links {
+    0%   { margin:0px;}
+    100% { margin:30px;}
+  }
+
+  #myLinks a:hover {
+    margin: 20px auto;
+    font-size: 50px;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  button i{
+    font-size: 42px;
+    color: white;
+    margin: 0;
+  }
+
+  #displayArtCode {
+    display: none;
+    flex-direction: column;
+    font-size: 20px;
+  }
+  
+  #displayArtCode a {
+    font-size: 38px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    color: #fcb604;
+  }
+  
+  #displayArtCode a:hover {
+    font-size: 38px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    text-decoration: underline;
+  }
+
+}
+
+
+
+
+
+  /*Portfolio Content*/
+  /*links left corner*/
+  #portfolio-links1{
+    width: 15vw;
+    height: fit-content;
+    display: flex;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    align-items: center;
+  }
+
+  #portfolio-links1 p{
+    margin: 0 5px;
+    font-size: 32px;
+  }
+
+  #portfolio-links1 a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #portfolio-links1 a:first-child {
+    background-color: #fac43e;
+  }
+
+
+  /*Portfolio Content for WEB*/
+  /*links left corner*/
+  #portfolio-links2{
+    width: 15vw;
+    height: fit-content;
+    display: flex;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    align-items: center;
+  }
+
+  #portfolio-links2 p{
+    margin: 0 5px;
+    font-size: 32px;
+  }
+
+  #portfolio-links2 a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #portfolio-links2 a:last-child {
+    background-color: #fac43e;
+  }
+
+  .pictures2{
+    height: 415px;
+    width: 362px;
+    border: 5px solid black;
+    position: relative;
+  }
+
+
+  .pictures2 img{
+    height: 400px;
+    width: 350px;
+    filter:blur(2px)
+}
+  
+  .galleri2{
+    width: 100vw;
+    display: flex;
+    padding: 50px;
+  }
+
+  #comingSoon{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 30px;
+  }
+
+  #comingSoon h3{
+    display: inline-block;
+    background-color: #fac43e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    font-size: 42px;
+    width: fit-content;
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+/*content images*/
+#content-box{
+    height: fit-content;
+    width: 100vw;
+    margin: 30px 0 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.pictures img{
+    height: 400px;
+    width: 350px;
+    border: 5px solid black;
+    margin: 30px 10px;
+}
+
+.galleri{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width:1107px) {
+  
+  .pictures img{
+    height: 300px;
+    width: 250px;
+    border: 5px solid black;
+    margin: 30px 10px;
+  }
+
+}
+
+@media screen and (max-width:984px) {
+
+  #portfolio-links{
+    padding-top: 10vh;
+  }
+}
+
+@media screen and (max-width:847px) {
+  
+  .pictures img{
+    height: 400px;
+    width: 350px;
+  }
+
+  #content-box{
+    height: fit-content;
+    width: 100vw;
+    margin: 30px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galleri{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#portfolio-links{
+  padding-top: 10vh;
+}
+}
+
+/* IMAGE CARUSEL*/
+#hidden-carusel{
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: rgba(128, 128, 128, 0.576);
+}
+
+.slide-structure img{
+  border: 4px solid black;
+  height: 600px;
+  width: 520px;
+}
+
+#exit i{
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  font-size: 40px;
+  border: 3px solid orange;
+  border-radius: 50px;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  top:8vh;
+  left: 2vw;
+  height:fit-content;
+  width:96vw;
+  background-color: White;
+  display: flex;
+  border: 5px solid black;
+  padding: 12px;
+}
+
+.row{
+  width: 100px;
+  height: 80vh;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+}
+
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 32px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 10vw;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.665);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 18px;
+  padding: 18px 10px;
+  position: absolute;
+  top: 0;
+  font-weight: 500;
+}
+
+/* Container for image text */
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row .column{
+  height: 100px;
+  width: 100px;
+  margin: 0;
+}
+
+/* Six columns side by side */
+.column {
+  float:top;
+  width: 16.66%;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.819);
+}
+
+.column img{
+  height: 100px;
+  width: 100px;
+  border: 4px solid black;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.slide-structure{
+display: flex;
+}
+
+/*text area*/
+.textcontent{
+  padding: 20px;
+  width: fit-content;
+  text-align: left;
+}
+
+.textcontent h1{
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.textcontent p{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  width: 40vw;
+}
+
+.textcontent hr{
+  margin: 0;
+  width: 40vw;
+}
+
+#infoPopup{
+  display: none;
+}
+
+@media screen and (max-width:1234px) {
+  
+  .container {
+    position: relative;
+    top:18vh;
+    left: 2vw;
+    height:550px;
+    width:96vw;
+    background-color: White;
+    display: flex;
+    border: 5px solid black;
+    padding: 12px;
+  }
+
+  #exit i{
+    position: absolute;
+    top: 10vh;
+    left: 1vw;
+    font-size: 40px;
+    border: 3px solid orange;
+    border-radius: 50px;
+  }
+
+
+  .slide-structure img{
+    border: 4px solid black;
+    height: 500px;
+    width: 420px;
+  }
+
+  .column {
+    float:right;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.819);
+  }
+  
+  .column img{
+    height: 50px;
+    width: 50px;
+    border: 4px solid black;
+  }
+
+  .row .column{
+    height: 50px;
+    width: 50px;
+    margin: 0;
+  }
+
+  .next {
+    right: 7vw;
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+@media screen and (max-width:961px) {
+  
+  .container {
+    position: relative;
+    top:18vh;
+    left: 2vw;
+    height:450px;
+    width:96vw;
+    background-color: White;
+    display: flex;
+    border: 5px solid black;
+    padding: 12px;
+  }
+
+  #exit i{
+    position: absolute;
+    top: 10vh;
+    left: 1vw;
+    font-size: 40px;
+    border: 3px solid orange;
+    border-radius: 50px;
+  }
+
+
+  .slide-structure img{
+    border: 4px solid black;
+    height: 400px;
+    width: 320px;
+  }
+
+  .column {
+    float:right;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.819);
+  }
+  
+  .column img{
+    height: 50px;
+    width: 50px;
+    border: 4px solid black;
+  }
+
+  .row .column{
+    height: 50px;
+    width: 50px;
+    margin: 0;
+  }
+
+  .next {
+    right: 7vw;
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+@media screen and (max-width:782px) {
+  
+  .container {
+    position: relative;
+    top:18vh;
+    left: 2vw;
+    height:400px;
+    width:96vw;
+    background-color: White;
+    display: flex;
+    border: 5px solid black;
+    padding: 12px;
+  }
+
+  #exit i{
+    position: absolute;
+    top: 10vh;
+    left: 1vw;
+    font-size: 40px;
+    border: 3px solid orange;
+    border-radius: 50px;
+  }
+
+
+  .slide-structure img{
+    border: 4px solid black;
+    height: 350px;
+    width: 280px;
+  }
+
+  .column {
+    float:right;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.819);
+  }
+  
+  .column img{
+    height: 50px;
+    width: 50px;
+    border: 4px solid black;
+  }
+
+  .row .column{
+    height: 50px;
+    width: 50px;
+    margin: 0;
+  }
+
+  .next {
+    right: 10vw;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .textcontent h1{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+  
+  .textcontent p{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    width: 30vw;
+  }
+  
+  .textcontent hr{
+    margin: 0;
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width:604px) {
+  
+  .container {
+    position: relative;
+    top:25vh;
+    left: 2vw;
+    height:350px;
+    width:96vw;
+    background-color: White;
+    display: flex;
+    border: 5px solid black;
+    padding: 12px;
+  }
+
+  #exit i{
+    position: absolute;
+    top: 18vh;
+    left: 1vw;
+    font-size: 40px;
+    border: 3px solid orange;
+    border-radius: 50px;
+  }
+
+
+  .slide-structure img{
+    border: 4px solid black;
+    height: 300px;
+    width: 220px;
+  }
+
+  .column {
+    float:right;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.819);
+  }
+  
+  .column img{
+    height: 50px;
+    width: 50px;
+    border: 4px solid black;
+  }
+
+  .row .column{
+    height: 50px;
+    width: 50px;
+    margin: 0;
+  }
+
+  .next {
+    right: 10vw;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .textcontent h1{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+  
+  .textcontent p{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    width: 30vw;
+  }
+  
+  .textcontent hr{
+    margin: 0;
+    width: 30vw;
+  }
+}
+
+
+
+
+
+
+
+/*FOOTER*/
+footer{
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+}
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

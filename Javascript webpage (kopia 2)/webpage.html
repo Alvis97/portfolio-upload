@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <link rel="stylesheet" href="css/artpage.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">    
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/0852dc3358.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="jquery-3.6.4.js"></script>
+</head>
+<body>
+
+<!-- Menu -->
+<header class="desctop">
+  <img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px">
+      <div class="links">
+        <a href="index.html">HOMEPAGE</a>
+        <a href="aboutme.html">ABOUT ME</a>
+        <button type="submit" id="portfolio">PORTFOLIO</button>
+        <a href="contact.html">CONTACT</a>
+      </div>
+</header> 
+<!-- Hidden portfolio dropdown -->
+<div class="hidden">
+<div class="cirkel">
+  <a href="artpage.html">Art</a>
+</div>
+<div class="cirkel1">
+  <a href="webpage.html">Web</a>
+</div>
+</div>
+
+
+<!-- Mobile navigationbar -->
+<header class="mobile">
+<button id="hambugerLinks"><i class="fa-solid fa-bars"></i></button>
+<div id="myLinks">
+  <a href="index.html">HOMEPAGE</a>
+  <a href="aboutme.html">ABOUTME</a>
+  <button id="viewArtCode" class="mylinksbut" >PORTFOLIO</button> 
+  
+  <div id="displayArtCode">
+    <a href="artpage.html">Art</a>
+    <a href="webpage.html">Web</a>
+  </div>
+
+  <a href="contact.html" class="mylinksbut">CONTACT</a>
+</div>
+<div class="topnav">
+  <a href=""><img src="" alt=""></a>
+</div>
+</header>
+   
+
+<!-- portfolio links -->
+<section id="portfolio-links2">
+  <a href="artpage.html">ART</a>
+  <p>/</p>
+  <a href="webpage.html">WEB</a>
+</section>
+
+<!-- content images -->
+<section id="content-box">
+
+  <div class="galleri2">
+      <div class="pictures2">
+          <img class="pic pic1" src="images/Website.png"  onclick="currentSlide(1)">
+          <div id="comingSoon">
+          <h3>Coming Soon</h3>
+          </div>
+      </div>
+ </div>
+
+
+<script>
+ $(document).ready(function(){
+
+
+  //MOBILE MENU DROPDOWN FORART AND WEB
+  $('#viewArtCode').click(function() {
+  $('#displayArtCode').slideDown(); /* Show the element using slideDown() method */
+  });
+
+  $(document).click(function(event) {
+    if (!$(event.target).closest('#viewArtCode, #displayArtCode').length) {
+    if ($('#displayArtCode').is(':visible')) {
+      $('#displayArtCode').slideUp();
+    }
+    }
+  });
+  
+
+  
+   // PORTFOLIO CIRCLE DROPDOWN
+   $('#portfolio').click(function() {
+    $('.hidden').toggleClass('show'); /* toggle the show class */
+    });
+
+  //HAMBURGER MENU DROPDOWN
+  $('#hambugerLinks').click(function() {
+  $('#myLinks').toggleClass('show'); /* Add or remove the .show class */
+  });
+
+
+});
+
+
+
+</script>   
+</body>
+</html>

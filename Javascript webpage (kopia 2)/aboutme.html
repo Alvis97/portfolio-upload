@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/aboutme.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">    
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/0852dc3358.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="jquery-3.6.4.js"></script>
+</head>
+<body>
+  
+<!-- Menu -->
+<header class="desctop">
+      <img src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px">
+          <div class="links">
+            <a href="index.html">HOMEPAGE</a>
+            <a href="aboutme.html">ABOUT ME</a>
+            <button type="submit" id="portfolio">PORTFOLIO</button>
+            <a href="contact.html">CONTACT</a>
+          </div>
+</header> 
+<!-- Hidden portfolio dropdown -->
+<div class="hidden">
+    <div class="cirkel">
+      <a href="artpage.html">Art</a>
+    </div>
+    <div class="cirkel1">
+      <a href="webpage.html">Web</a>
+    </div>
+</div>
+    
+  
+<!-- Mobile navigationbar -->
+<header class="mobile">
+  <button id="hambugerLinks"><i class="fa-solid fa-bars"></i></button>
+  <div id="myLinks">
+      <a href="index.html">HOMEPAGE</a>
+      <a href="aboutme.html">ABOUTME</a>
+      <button id="viewArtCode" class="mylinksbut" >PORTFOLIO</button> 
+      
+      <div id="displayArtCode">
+        <a href="artpage.html">Art</a>
+        <a href="webpage.html">Web</a>
+      </div>
+    
+    <a href="contact.html" class="mylinksbut">CONTACT</a>
+  </div>
+  <div class="topnav">
+      <a href=""><img src="" alt=""></a>
+  </div>
+</header>
+
+
+<!-- About me -->
+<div class="aboutme">
+  <div id="text-box">
+    <h1 class="ml12">Hi! I´m Alva</h1>                
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>     
+    <p>I am a web developer originally from Sweden but currently living in London. I have a passion for both technology and art, and I have combined these two interests by creating this website.
+      The purpose of this website is to showcase my artistic abilities and promote my work to a wider audience. Through my website, I aim to share my unique perspective and bring my art to life. Whether it's digital paintings, illustrations, or graphic design, my website showcases my creativity and my ability to bring ideas to life.
+      If you are a fan of art and technology, I invite you to take a look around my website and discover my creations. I hope you enjoy what you see and that you'll come back for more in the future.</p>
+  </div>
+  <div id="image-box">
+     <div>
+     <img src="./Images/Selfie2.jpeg" alt="selfie">
+     </div>
+     <div id="Alinks">
+     <a href="#ArtBack">Art Background</a>
+     <a href="#WebBack">Web Background</a>
+     </div>
+  </div>
+</div>
+<hr>
+
+
+
+<!-- Art Background -->
+<div class="aboutme" id="ArtBack">
+  <div id="text-box">
+    <h1 class="ml12">My art background</h1>                
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>     
+    <p>I have been drawing ever since I was a child, starting at the age of 2. It has always been my biggest hobby and I love to focus on being as realistic and detailed as possible. To further explore my creative qualities and practice new techniques, I attended Örebro Art School for a year. It was an amazing experience that allowed me to grow as an artist and develop my skills even further.</p>
+  </div>
+  <div id="image-box">
+     <div>
+     <img src="./Images/herman.jpeg" alt="selfie">
+     </div>
+     <div id="Alinks">
+     <a href="#WebBack">Web Background</a>
+     <a href="https://orebrokonstskola.se/">Örebro Art School</a>
+     </div>
+  </div>
+</div>
+<hr>
+
+
+
+<!-- Web Background -->
+<div class="aboutme" id="WebBack">
+  <div id="text-box">
+    <h1 class="ml12">My Web Background</h1>                
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>     
+    <p>"I started coding websites about a year ago and I have been enjoying it ever since. Being able to bring my ideas to life on the web is an amazing feeling. I have experience with HTML, CSS, Java, jQuery and PHP, but I especially enjoy the creative parts of web development. Currently, I am studying web development at SAE London campus to further my skills and knowledge in this field. I am excited to continue learning and growing as a web developer."</p>
+  </div>
+  <div id="image-box">
+     <div>
+     <img src="./Images/Website.png" alt="selfie">
+     </div>
+     <div id="Alinks">
+     <a href="#ArtBack">Art Background</a>
+     <a href="https://www.sae.edu/gbr/">Sae Website</a>
+     </div>
+  </div>
+</div>
+<img id="logo-last" src="Images/Alva-LOGO.png" alt="Alva logga" height="22px" width="90px" >
+
+
+<!-- JQUERY -->
+<script>
+  
+$(document).ready(function(){
+
+
+  //MOBILE MENU DROPDOWN FORART AND WEB
+  $('#viewArtCode').click(function() {
+  $('#displayArtCode').slideDown(); /* Show the element using slideDown() method */
+  });
+
+  $(document).click(function(event) {
+    if (!$(event.target).closest('#viewArtCode, #displayArtCode').length) {
+    if ($('#displayArtCode').is(':visible')) {
+      $('#displayArtCode').slideUp();
+    }
+    }
+  });
+  
+
+  
+   // PORTFOLIO CIRCLE DROPDOWN
+   $('#portfolio').click(function() {
+    $('.hidden').toggleClass('show'); /* toggle the show class */
+    });
+
+  //HAMBURGER MENU DROPDOWN
+  $('#hambugerLinks').click(function() {
+  $('#myLinks').toggleClass('show'); /* Add or remove the .show class */
+  });
+
+
+});
+
+
+
+    /*text animation*/
+    // Wrap every letter in a span
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml12');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+    .add({
+       targets: '.ml12 .letter',
+       translateX: [40,0],
+       translateZ: 0,
+       opacity: [0,1],
+       easing: "easeOutExpo",
+       duration: 1200,
+       delay: (el, i) => 500 + 30 * i
+    }).add({
+       targets: '.ml12 .letter',
+       translateX: [0,-30],
+       opacity: [1,0],
+       easing: "easeInExpo",
+       duration: 2000,
+       delay: (el, i) => 100 + 30 * i
+   });
+</script>
+      
+    
+</body>
+</html>
