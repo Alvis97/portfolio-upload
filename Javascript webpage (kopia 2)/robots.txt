@@ -2,8 +2,9 @@ User-agent: *
 
 Allow: /index.html
 Allow: /aboutme.html
-Allow: /artpage.html
+
 Allow: /webpage.html
 
 Disallow: /contact.html
+Disallow: /artpage.html
 
